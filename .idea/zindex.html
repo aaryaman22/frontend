@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        div{
+            height: 200px;
+            width: 400px;
+            border:4px solid black;
+            text-align:right;
+
+        }
+        #d1
+        {
+            position: relative;
+            top: 50px;
+            background-color:red;
+            z-index:2;
+             
+        }
+        #d2
+        {
+            position: relative;
+            left:100px;
+            background-color:yellow;
+            z-index:1;
+        }
+        #d3
+        {
+            position: relative;
+            bottom: 50px;
+            left:200px;
+            background-color:green;
+            z-index:2;
+        }
+    </style>
+    <script>
+        function myFunction(e)
+        {
+            var collection = document.getElementsByClassName("d");
+            let maxZ = -1;
+            for(var i  = 0 ; i < collection.length ; i++)
+            {
+                // console.log(getComputedStyle(collection[i]).zIndex);
+                maxZ = Math.max(getComputedStyle(collection[i]).zIndex , maxZ);
+            //     // alert(document.getElementById(collection[i].getAttribute('id')).style.zIndex);
+            }
+            e.target.style.zIndex=maxZ+1;
+            //document.getElementById(e.target.id).style.zIndex = maxZ+1;
+            //e.target.style.zIndex=2;
+            //alert(e.target.id);
+            //this.getElementById.style.zIndex=2;
+            //this.style.zIndex=2;
+            //alert(this.getAttribute('id'));
+        }
+    </script>
+</head>
+<body>
+        <div id="d1" class="d" onclick="myFunction(event)">
+            <p> this is div 1</p>
+        </div>
+        <div id="d2" class="d" onclick="myFunction(event)">
+            <p> this is div 2</p>
+        </div>
+        <div id="d3" class="d" onclick="myFunction(event)">
+            <p> this is div 3</p>
+        </div>
+        
+</body>
+</html>

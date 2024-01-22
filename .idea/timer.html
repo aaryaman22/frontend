@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let count = 0, timerId , lap =0;
+        function start()
+        {
+            timerId = setInterval(function()
+            {
+                count+=1;
+                document.getElementById('counter').innerHTML =count;
+            }
+        ,1000);
+        }
+        function stop()
+        {
+            clearInterval(timerId);
+        }
+        function reset()
+        {
+            count = 0;
+            // clearInterval(timerId);
+        }
+        // function lappp()
+        // {
+        //     document.getElementById('lap').innerHTML += ` lap count is ${lap++} time  = ${count}    `;
+        // }
+    </script>
+</head>
+<body>
+    <p>Count <span id="counter">0</span> </p>
+    <button onclick="start()">start</button>
+    <button onclick="stop()">stop</button>
+    <button onclick="reset()">restart</button>
+    <!-- <button onclick="lappp()">lap</button> -->
+    <!-- <p id="lap"></p> -->
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function opt(operator)
+        {
+            let num1 = Number(document.getElementById('num1').value);
+            let num2 = Number(document.getElementById('num2').value);
+            switch(operator)
+            {
+                case '+':
+                document.getElementById('p1').innerHTML = num1+num2;
+                break;
+                case '-':
+                document.getElementById('p1').innerHTML = num1-num2;
+                break;
+                case '*':
+                document.getElementById('p1').innerHTML = num1*num2;
+                break;
+                case '/':
+                document.getElementById('p1').innerHTML = num1/num2;
+                break;
+            }
+        }
+        
+    </script>
+</head>
+<body>
+    <label for="num1">number 1</label>
+    <input id="num1" type="number">
+    <br>
+    <br>
+    <label for="num2">number 2</label>
+    <input id="num2" type="number">
+    <br>
+    <br>
+    <button onclick="opt('+')">add</button>
+    <button onclick="opt('-')">sub</button>
+    <button onclick="opt('*')">multiply</button>
+    <button onclick="opt('/')">divide</button> 
+    <br>
+    <p id="p1"></p>
+</body>
+</html>
